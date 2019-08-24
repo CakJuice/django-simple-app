@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'widget_tweaks',
     'app_project.base',
+    'app_project.res',
 ]
 
 MIDDLEWARE = [

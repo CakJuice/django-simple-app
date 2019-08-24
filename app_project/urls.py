@@ -46,6 +46,7 @@ urlpatterns = [
         template_name='base/password_change_done.html'
     ), name='password_change_done'),
 
+    path('res/', include('app_project.res.urls')),
     path('admin/', admin.site.urls),
 ]
 
