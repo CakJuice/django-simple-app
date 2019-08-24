@@ -1,0 +1,24 @@
+language: python
+
+python:
+  - 3.6
+  - 3.7
+
+services: postgresql
+
+env:
+  - DJANGO=2.2
+
+before_install:
+  - export DJANGO_SETTINGS_MODULE=django-app.settings
+  - export PYTHONPATH=$HOME/builds/CakJuice/django-simple-app
+
+install:
+  - pip install -r requirements.txt
+
+before_script:
+  - psql -c "CREATE DATABASE \"django-app\";" -U postgres
+
+script:
+  - python manage.py migrate
+  - python manage.py test
