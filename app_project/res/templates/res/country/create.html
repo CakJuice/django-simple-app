@@ -1,8 +1,11 @@
-{% extends 'layouts/main_layout.html' %}
+{% extends 'layouts/adminlte_layout.html' %}
+{% load i18n %}
 
-{% block meta_description %}Create new country{% endblock %}
+{% block meta_description %}{% trans 'Create New Country' %}{% endblock %}
 {% block meta_keywords %}Country, Create{% endblock %}
-{% block title %}Create New Country{% endblock %}
+{% block title %}{% trans 'Create New Country' %}{% endblock %}
+
+{% block page_title %}{% trans 'Create New Country' %}{% endblock %}
 
 {% block content %}
   <div class="container my-3" id="main-content">
