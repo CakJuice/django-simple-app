@@ -10,3 +10,6 @@ class Country(BaseModel):
     code = models.CharField(max_length=2, verbose_name=_("Code"), unique=True,
                             help_text="The ISO country code in two chars. \nYou can use this field for quick search.")
     image = models.ImageField(upload_to=get_upload_path, verbose_name=_("Image"))
+
+    def __str__(self):
+        return '[%s] %s' % (self.code, self.name,)

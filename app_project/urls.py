@@ -17,10 +17,14 @@ from django.conf import settings
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
+from graphene_django.views import GraphQLView
 
 from app_project.base import views as base_views
 
 urlpatterns = [
+    # graphql
+    path('graphql', GraphQLView.as_view(graphiql=True)),
+
     # base url
     path('', base_views.homepage, name='homepage'),
     path('login/', auth_views.LoginView.as_view(template_name='base/login.html'), name='login'),

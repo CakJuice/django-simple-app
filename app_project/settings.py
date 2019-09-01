@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'debug_toolbar',
     'widget_tweaks',
+    'graphene_django',
     'app_project.base',
     'app_project.res',
 ]
@@ -146,4 +147,8 @@ INTERNAL_IPS = '127.0.0.1'
 
 DEBUG_TOOLBAR_CONFIG = {
     'SHOW_TOOLBAR_CALLBACK': lambda request: DEBUG,
+}
+
+GRAPHENE = {
+    'SCHEMA': 'app_project.schema.schema'
 }
